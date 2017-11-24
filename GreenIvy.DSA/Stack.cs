@@ -90,4 +90,53 @@ namespace GreenIvy.DSA
         }
     }
 
+    public class UserDefinedStackTemplate<T>
+    {
+        private T[] _store;
+        public T[] Store
+        {
+            get { return _store; }
+            //set { _store = value; }
+        }
+        private int _count = 0;
+        public int Count
+        {
+            get { return _count; }
+        }
+
+        public UserDefinedStackTemplate(int length)
+        {
+            _store = new T[length];
+        }
+        public void Push(T a)
+        {
+            if (_count < _store.Length)
+            {
+                _store[_count] = a;
+                _count++;
+            }
+
+        }
+
+        public T Pop()
+        {
+            T ret=default(T);
+            // todo: change this
+            if (_count >= 0)
+            {
+                _count--;
+                ret = _store[_count];
+                _store[_count] = default(T);
+
+            }
+            return ret;
+        }
+
+        public string GetValues()
+        {
+            var str = string.Join(",", _store);
+            return str;
+        }
+    }
+
 }
