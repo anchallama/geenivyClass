@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenIvy", "GreenIvy\GreenIvy.csproj", "{D3EEE923-003C-4419-9DFF-B42C171F7027}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenIvy.Maths", "GreenIvy.Maths\GreenIvy.Maths.csproj", "{BE9A0832-BB72-4C57-B581-8AE47D798386}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenIvy.DSA", "GreenIvy.DSA\GreenIvy.DSA.csproj", "{5F1AB0BF-ED86-4F41-BFC7-CB8C00B7C532}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3EEE923-003C-4419-9DFF-B42C171F7027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3EEE923-003C-4419-9DFF-B42C171F7027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3EEE923-003C-4419-9DFF-B42C171F7027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3EEE923-003C-4419-9DFF-B42C171F7027}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE9A0832-BB72-4C57-B581-8AE47D798386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE9A0832-BB72-4C57-B581-8AE47D798386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE9A0832-BB72-4C57-B581-8AE47D798386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE9A0832-BB72-4C57-B581-8AE47D798386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1AB0BF-ED86-4F41-BFC7-CB8C00B7C532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1AB0BF-ED86-4F41-BFC7-CB8C00B7C532}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1AB0BF-ED86-4F41-BFC7-CB8C00B7C532}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1AB0BF-ED86-4F41-BFC7-CB8C00B7C532}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
