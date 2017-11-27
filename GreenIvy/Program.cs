@@ -92,15 +92,38 @@ namespace GreenIvy
             //Console.WriteLine(objStack1.GetValues());
 
 
-            //interface
-            Shapes.IShape s = new Shapes.Triangle();
-            s.Area();
-            s.Perimeter();
+            ////interface
+            //Shapes.IShape s = new Shapes.Triangle();
+            //s.Area();
+            //s.Perimeter();
 
 
-            s = new Shapes.Rectangle();
-            s.Area();
-            s.Perimeter();
+            //s = new Shapes.Rectangle();
+            //s.Area();
+            //s.Perimeter();
+
+            //ClassTest.Shapes = new List<Shapes.IShape>();
+
+            //ClassTest.Shapes.Add(new Shapes.Triangle());
+            //ClassTest.Shapes.Add(new Shapes.Rectangle());
+            //ClassTest.Shapes.Add(new Shapes.Circle());
+
+            //foreach (var item in ClassTest.Shapes)
+            //{
+            //    item.Area();
+            //    item.Perimeter();
+            //}
+
+
+            //inheritence
+            GrandFather granFather = new GrandFather("GFirstName","GMiddleName","GLastName");
+            Father father = new Father("FFirstName","FMiddleName","FLastName","Engineering");
+            Son son = new Son();
+            Console.WriteLine(granFather.Details());
+            Console.WriteLine(father.Details());
+            Console.WriteLine(son.Details());
+
+
 
             //MyClass<Shapes.Triangle> objs= new MyClass<Shapes.Triangle>();
 
@@ -109,9 +132,74 @@ namespace GreenIvy
         }
     }
 
-    public class MyClass<T> where T : Shapes.IShape
+    public class ClassTest
     {
+        public static List<Shapes.IShape> Shapes { get; set; }
+
+        public List<Shapes.IShape> Shapes2 { get; set; }
+
+        public ClassTest()
+        {
+            Shapes2 = new List<GreenIvy.Shapes.IShape>();
+
+        }
+        public ClassTest(List<Shapes.IShape> Shapes2)
+        {
+            //Shapes2 = Shapes2;
+            this.Shapes2 = Shapes2;
+        }
+
+    }
 
 
+    public class GrandFather
+    {
+        public GrandFather()
+        {
+
+        }
+        public GrandFather(string FirstName, string MiddleName,string LastName)
+        {
+            this.FirstName = FirstName;
+            this.MiddleName = MiddleName;
+            this.LastName = LastName;
+        }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
+
+        public virtual string Details()
+        {
+            return $"First Name {FirstName}\nMiddle Name {MiddleName}\nLastName {LastName}\n";
+        }
+
+    }
+
+    public class Father : GrandFather
+    {
+        public Father() : base()
+        {
+
+        }
+        public Father(string FirstName,string MiddleName, string LastName, string Education) : base(FirstName,MiddleName,LastName)
+        {
+            this.Education = Education;
+        }
+
+        public override string Details()
+        {
+            return $"Education {this.Education}\n";
+        }
+
+
+        public string Education { get;set;}
+    }
+
+    public class Son :Father
+    {
+        public new string Details()
+        {
+            return "No details";
+        }
     }
 }

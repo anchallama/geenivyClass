@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace GreenIvy.Shapes
 {
-    public class Circle
+    public class Circle : IShape
     {
+        public void Area()
+        {
+          
+        }
+
+        public void Perimeter()
+        {
+          
+        }
     }
 }
