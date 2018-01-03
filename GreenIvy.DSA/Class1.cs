@@ -6,7 +6,43 @@ using System.Threading.Tasks;
 
 namespace GreenIvy.DSA
 {
-    public class Class1
+
+    [Serializable]
+    public class StackOverflowException : Exception
     {
+        public StackOverflowException() { }
+        public StackOverflowException(string message) : base(message) { }
+        public StackOverflowException(string message, Exception inner) : base(message, inner) { }
+        protected StackOverflowException(
+          System.Runtime.Serialization.SerializationInfo info,
+          System.Runtime.Serialization.StreamingContext context) : base(info, context)
+        { }
     }
+
+    [System.AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = true)]
+    sealed class TestStackAttribute : Attribute
+    {
+        // See the attribute guidelines at 
+        //  http://go.microsoft.com/fwlink/?LinkId=85236
+        readonly string positionalString;
+
+        // This is a positional argument
+        public TestStackAttribute(string positionalString)
+        {
+            this.positionalString = positionalString;
+
+            // TODO: Implement code here
+
+            //throw new NotImplementedException();
+        }
+
+        public string PositionalString
+        {
+            get { return positionalString; }
+        }
+
+        // This is a named argument
+        public int NamedInt { get; set; }
+    }
+
 }

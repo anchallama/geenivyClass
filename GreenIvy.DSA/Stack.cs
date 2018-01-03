@@ -6,16 +6,22 @@ using System.Threading.Tasks;
 
 namespace GreenIvy.DSA
 {
+    
     public class Stack
     {
         public int[] store = new int[10];
         public int count = 0;
+        [TestStack("")]
         public void Push(int a)
         {
             if (count<10)
             {
                 store[count] = a;
                 count++;
+            }
+            else
+            {
+                throw new StackOverflowException();
             }
             
         }

@@ -115,13 +115,14 @@ namespace GreenIvy
             //}
 
 
-            //inheritence
-            GrandFather granFather = new GrandFather("GFirstName","GMiddleName","GLastName");
-            Father father = new Father("FFirstName","FMiddleName","FLastName","Engineering");
-            Son son = new Son();
-            Console.WriteLine(granFather.Details());
-            Console.WriteLine(father.Details());
-            Console.WriteLine(son.Details());
+            ////inheritence
+            //GrandFather granFather = new GrandFather("GFirstName","GMiddleName","GLastName");
+            //Father father = new Father("FFirstName","FMiddleName","FLastName","Engineering");
+            //Son son = new Son();
+            
+            //Console.WriteLine(granFather.Details());
+            //Console.WriteLine(father.Details());
+            //Console.WriteLine(son.Details());
 
 
 
@@ -168,6 +169,7 @@ namespace GreenIvy
         public string MiddleName { get; set; }
         public string LastName { get; set; }
 
+        protected int Marriagenum = 2;
         public virtual string Details()
         {
             return $"First Name {FirstName}\nMiddle Name {MiddleName}\nLastName {LastName}\n";
@@ -184,6 +186,7 @@ namespace GreenIvy
         public Father(string FirstName,string MiddleName, string LastName, string Education) : base(FirstName,MiddleName,LastName)
         {
             this.Education = Education;
+                   
         }
 
         public override string Details()
@@ -194,12 +197,23 @@ namespace GreenIvy
 
         public string Education { get;set;}
     }
-
-    public class Son :Father
+    public interface Mother
     {
+        string MotherName { get; set; }
+    }
+
+    public class Son :Father,Mother
+    {
+        public string MotherName
+        {
+            get; set;
+        }
+
         public new string Details()
         {
             return "No details";
         }
     }
+
+
 }
