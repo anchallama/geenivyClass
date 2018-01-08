@@ -32,8 +32,9 @@ namespace GreenIvy.Web.Controllers
             return View("Contact");
         }
 
-        public ActionResult Test2()
+        public ActionResult Test2(string name)
         {
+            ViewBag.Name = name;
             return View();
         }
 

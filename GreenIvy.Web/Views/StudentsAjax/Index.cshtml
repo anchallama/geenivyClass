@@ -1,0 +1,135 @@
+﻿@model IEnumerable<GreenIvy.Web.Models.Student>
+
+
+    <p>
+       @* @Html.ActionLink("Create New", "Create",null, new { @class="createbtn"})*@
+        <a class="createbtn btn btn-primary" href="#"><i class="glyphicon glyphicon-plus"></i></a>
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td id="@item.id">
+                <a href="#" class="editbtn btn btn-success"><i class="glyphicon glyphicon-edit"></i></a>
+                <a href="#" class="deletebtn btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                <a href="#" class="detailsbtn btn btn-info"><i class="glyphicon glyphicon-th-list"></i></a>
+
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.id }, new { @class="editbtn" }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id }, new { @class="detailsbtn"}) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id }, new { @class="deletebtn"})*@
+            </td>
+        </tr>
+    }
+    
+    </table>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body" id="myModalBody">
+                
+            </div>
+            @*<div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>*@
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(document).ready(function () {
+            $(".createbtn").on('click', function (e) {
+                e.preventDefault();
+                //request
+                $.ajax({
+                    url: '/StudentsAjax/Create',
+                    method: 'GET'
+                }).done(function(data) {
+                    $("#myModalBody").html(data);
+                    $("#myModalLabel").html("Create new student");
+                    $('#myModal').modal('show');
+                }).fail(function() {
+
+                });
+            });
+
+            $(".editbtn").on('click', function (e) {
+                e.preventDefault();
+                var id = $(this).parent().attr("id");
+                //request
+                $.ajax({
+                    url: '/StudentsAjax/Edit/'+id,
+                    method: 'GET'
+                }).done(function (data) {
+                    $("#myModalBody").html(data);
+                    $("#myModalLabel").html("Edit student");
+                    $('#myModal').modal('show');
+                });
+            });
+            $(".detailsbtn").on('click', function (e) {
+                e.preventDefault();
+                var id = $(this).parent().attr("id");
+
+                //request
+                $.ajax({
+                    url: '/StudentsAjax/Details/'+id,
+                    method: 'GET'
+                }).done(function (data) {
+                    $("#myModalBody").html(data);
+                    $("#myModalLabel").html("Details of student");
+                    $('#myModal').modal('show');
+                });
+            });
+            $(".deletebtn").on('click', function (e) {
+                e.preventDefault();
+
+                var id = $(this).parent().attr("id");
+                //request
+                $.ajax({
+                    url: '/StudentsAjax/Delete/'+id,
+                    method: 'GET'
+                }).done(function (data) {
+                    $("#myModalBody").html(data);
+                    $("#myModalLabel").html("Delete student");
+                    $('#myModal').modal('show');
+                });
+            });
+
+        });
+    </script>
+}

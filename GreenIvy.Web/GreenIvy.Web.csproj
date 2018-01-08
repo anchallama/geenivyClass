@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\StudentsAjaxController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -253,6 +254,12 @@
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Students\Edit.cshtml" />
     <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Home\Test2.cshtml" />
+    <Content Include="Views\StudentsAjax\Create.cshtml" />
+    <Content Include="Views\StudentsAjax\Delete.cshtml" />
+    <Content Include="Views\StudentsAjax\Details.cshtml" />
+    <Content Include="Views\StudentsAjax\Edit.cshtml" />
+    <Content Include="Views\StudentsAjax\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
