@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GreenivyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentsAjaxController.cs" />
@@ -187,10 +188,41 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\GreenivyModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GreenivyModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GreenivyModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GreenivyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GreenivyModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GreenivyModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MyModel.cs" />
-    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\Parent.cs">
+      <DependentUpon>GreenivyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Student.cs">
+      <DependentUpon>GreenivyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentOld.cs" />
+    <Compile Include="Models\StudentParent.cs">
+      <DependentUpon>GreenivyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModels\NewEntry.cs" />
+    <Compile Include="Models\vw_ClassCount.cs">
+      <DependentUpon>GreenivyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vw_StudentParentDetails.cs">
+      <DependentUpon>GreenivyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -201,8 +233,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\GreenivyModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GreenivyModel.edmx</DependentUpon>
+      <LastGenOutput>GreenivyModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\GreenivyModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GreenivyModel.edmx</DependentUpon>
+      <LastGenOutput>GreenivyModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\GreenivyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GreenivyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\GreenivyModel.edmx.diagram">
+      <DependentUpon>GreenivyModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -260,6 +309,7 @@
     <Content Include="Views\StudentsAjax\Details.cshtml" />
     <Content Include="Views\StudentsAjax\Edit.cshtml" />
     <Content Include="Views\StudentsAjax\Index.cshtml" />
+    <Content Include="Views\Greenivy\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -279,6 +329,9 @@
     <EmbeddedResource Include="Migrations\201801031450126_studentnamerequired.resx">
       <DependentUpon>201801031450126_studentnamerequired.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="03e3a7ea3e6c4d2f8d5305b2a7ec0ee9" Name="Diagram1">
+        <EntityTypeShape EntityType="GreenivyDBModel.Parent" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenivyDBModel.Student" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenivyDBModel.StudentParent" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenivyDBModel.vw_ClassCount" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenivyDBModel.Vw_StudentParentDetails" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="GreenivyDBModel.FK_StudentParent_ToParent" ManuallyRouted="false" />
+        <AssociationConnector Association="GreenivyDBModel.FK_StudentParent_ToStudent" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

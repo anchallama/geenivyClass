@@ -27,7 +27,7 @@ namespace GreenIvy.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
+            StudentOld student = db.Students.Find(id);
             if (student == null)
             {
                 return HttpNotFound();
@@ -46,7 +46,7 @@ namespace GreenIvy.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,FirstName,LastName,EmailAddress,PhoneNumber")] Student student)
+        public ActionResult Create([Bind(Include = "id,FirstName,LastName,EmailAddress,PhoneNumber")] StudentOld student)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace GreenIvy.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
+            StudentOld student = db.Students.Find(id);
             if (student == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace GreenIvy.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
+            StudentOld student = db.Students.Find(id);
             if (student == null)
             {
                 return HttpNotFound();
@@ -109,7 +109,7 @@ namespace GreenIvy.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Student student = db.Students.Find(id);
+            StudentOld student = db.Students.Find(id);
             db.Students.Remove(student);
             db.SaveChanges();
             return RedirectToAction("Index");

@@ -21,7 +21,7 @@ namespace GreenIvy.Web.Models
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
-        public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<StudentOld> Students { get; set; }
     }
 
     //public class MyEntity

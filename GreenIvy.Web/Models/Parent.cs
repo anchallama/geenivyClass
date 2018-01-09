@@ -12,19 +12,18 @@ namespace GreenIvy.Web.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Student
+    public partial class Parent
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Student()
+        public Parent()
         {
             this.StudentParents = new HashSet<StudentParent>();
         }
     
         public int Id { get; set; }
-        public string Name { get; set; }
-        public int Class { get; set; }
-        public bool Status { get; set; }
+        public string ParentName { get; set; }
         public string Email { get; set; }
+        public string Type { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StudentParent> StudentParents { get; set; }
